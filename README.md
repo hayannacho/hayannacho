@@ -14,7 +14,7 @@ Explore how grooming strategies and alliance dynamics shape simulated dominance 
 - **Stack:** Python · NumPy · SciPy · simulation
 
 ### [PostureAware](https://github.com/hayannacho/posture-aware-study)
-A local webcam application for immediate versus adaptive posture feedback.
+A team course project implementing a local webcam application for immediate versus adaptive posture feedback.
 
 - **Focus:** webcam calibration, posture monitoring and adaptive feedback; application code developed with AI assistance.
 - **Explore:** personal calibration, posture monitoring, feedback and session summaries. Four hardware-free checks passed; live camera/audio behavior requires separate verification.
