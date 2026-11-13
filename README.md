@@ -31,6 +31,15 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Bioinformatics workflows
 
+### [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter)
+Compute optimal local DNA-alignment scores and count coordinate-distinct traceback paths; export total and endpoint counts as JSON.
+
+- **Verified:** seven tests passed, including 1,922 score/count comparisons against independent exhaustive enumeration. Archive-compatible mode also matched the original function on 961 short sequence pairs. [Validation](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/VALIDATION.md).
+- **Scope:** score/count dynamic programming and tied-path aggregation in the archived coursework implementation; independent line-level authorship is not established. Scoring correction, CLI and tests are documented as current maintenance. [Source and changes](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/PROVENANCE.md).
+- **Data:** synthetic toy sequences only; short-sequence algorithm demonstration, not a biological significance test.
+- **Context:** CSE 6301 · Fall 2025 · Homework 1
+- **Stack:** Python standard library
+
 ### [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo)
 Compare educational Single RAD, ddRAD and 2bRAD coverage windows with two-sample variant positions; export BED, TSV and JSON results.
 
