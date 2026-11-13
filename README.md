@@ -31,9 +31,23 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Bioinformatics workflows
 
-[Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis) — Bash workflows for sequence search, CRISPR spacer extraction and homolog identification.
+### [Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis)
+Search exact nucleotide matches and protein-to-genome candidates, extract repeat-flanked spacer candidates, and map alignments to annotated genes.
 
-[Nextflow coursework](https://github.com/hayannacho/my_first_wf) — workflow programming and command-line bioinformatics.
+- **Verified:** five synthetic integration tests passed with real BLAST+ and seqtk, covering reverse-strand/BED boundaries, spacer extraction, paths with spaces, and failure handling. [Validation](https://github.com/hayannacho/genome_sequence_analysis/blob/main/docs/VALIDATION.md).
+- **Scope:** Bash workflow integration, sequence filtering and coordinate handling, with archived coursework separated from current corrections. [Source and changes](https://github.com/hayannacho/genome_sequence_analysis/blob/main/docs/PROVENANCE.md).
+- **Context:** BIOL 7200 · Fall 2024
+- **Stack:** Bash · BLAST+ · seqtk · Docker
+
+### [Paired-end processing with Nextflow](https://github.com/hayannacho/my_first_wf)
+Trim paired reads with fastp, then run SPAdes assembly and SeqKit statistics as parallel downstream branches.
+
+- **Verified:** all three stages completed on the archived read subset, synthetic inputs, and inputs with spaces in their filenames; output checks confirmed paired FASTQ, statistics and nonempty assemblies. [Validation](https://github.com/hayannacho/my_first_wf/blob/main/docs/VALIDATION.md).
+- **Scope:** composing the three-tool workflow and configuring inputs, execution and outputs; archived coursework and current maintenance changes are documented separately. [Source and changes](https://github.com/hayannacho/my_first_wf/blob/main/docs/PROVENANCE.md).
+- **Context:** BIOL 7210 · Spring 2025
+- **Stack:** Nextflow DSL2 · fastp · SPAdes · SeqKit · Docker
+
+These checks demonstrate execution, not biological accuracy or genome-assembly quality. The underlying bioinformatics tools are external software; the contribution described here is their workflow integration.
 
 ## Working approach
 
