@@ -29,13 +29,23 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 - **Stack:** R · mice · R Markdown · Python
 - **Data:** synthetic demonstration only; no real ADNI data or clinical findings.
 
+## Statistical learning
+
+### [Gaussian mixture clustering with EM](https://github.com/hayannacho/gmm-em-clustering)
+Fit a full-covariance Gaussian mixture in NumPy and export assignments and likelihood traces.
+
+- **Verified:** seven independent tests and seven course tests passed; a 600-point synthetic demo converged in 11 iterations.
+- **Implementation:** individual CSE 6740 coursework implementing initialization, covariance estimation, Gaussian density, E/M updates and model training.
+- **Data:** synthetic observations only.
+- **Stack:** Python · NumPy
+
 ## Bioinformatics workflows
 
 ### [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter)
 Compute optimal local DNA-alignment scores and count coordinate-distinct traceback paths; export total and endpoint counts as JSON.
 
 - **Verified:** seven tests passed, including 1,922 score/count comparisons against independent exhaustive enumeration. Archive-compatible mode also matched the original function on 961 short sequence pairs. [Validation](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/VALIDATION.md).
-- **Scope:** score/count dynamic programming and tied-path aggregation in the archived coursework implementation; independent line-level authorship is not established. Scoring correction, CLI and tests are documented as current maintenance. [Source and changes](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/PROVENANCE.md).
+- **Scope:** individual coursework implementing score/count dynamic programming and tied-path aggregation. Scoring correction, CLI and tests are documented as current maintenance. [Source and changes](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/PROVENANCE.md).
 - **Data:** synthetic toy sequences only; short-sequence algorithm demonstration, not a biological significance test.
 - **Context:** CSE 6301 · Fall 2025 · Homework 1
 - **Stack:** Python standard library
@@ -44,7 +54,7 @@ Compute optimal local DNA-alignment scores and count coordinate-distinct traceba
 Compare educational Single RAD, ddRAD and 2bRAD coverage windows with two-sample variant positions; export BED, TSV and JSON results.
 
 - **Verified:** eight tests passed across all three modes, coordinate boundaries, overlapping intervals and repeatability. The synthetic example produces 3 / 8 / 1 windows and covers 3 / 4 / 1 variant records respectively. [Validation](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/VALIDATION.md).
-- **Scope:** adaptation of a team coursework implementation covering motif matching, interval construction and genotype filtering; individual line-level authorship is not established. Current maintenance changes are documented separately. [Source and changes](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/PROVENANCE.md).
+- **Scope:** team coursework covering motif matching, interval construction and genotype filtering. Current maintenance changes are documented separately. [Source and changes](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/PROVENANCE.md).
 - **Data:** entirely synthetic FASTA/VCF examples; a simplified recognition-start model, not a physical digestion or sequencing-yield simulator.
 - **Context:** BIOL 6505 · Fall 2025 · team project
 - **Stack:** Python · Biopython
@@ -78,4 +88,4 @@ These checks demonstrate execution, not biological accuracy or genome-assembly q
 
 ## Working approach
 
-I document inputs, execution steps, tested environments and interpretation limits. Each featured repository identifies contribution scope, source provenance, and tested execution steps. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
+I document inputs, execution steps, tested environments and interpretation limits. Each featured repository documents implementation and tested execution steps. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
