@@ -31,6 +31,15 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Bioinformatics workflows
 
+### [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo)
+Compare educational Single RAD, ddRAD and 2bRAD coverage windows with two-sample variant positions; export BED, TSV and JSON results.
+
+- **Verified:** eight tests passed across all three modes, coordinate boundaries, overlapping intervals and repeatability. The synthetic example produces 3 / 8 / 1 windows and covers 3 / 4 / 1 variant records respectively. [Validation](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/VALIDATION.md).
+- **Scope:** adaptation of a team coursework implementation covering motif matching, interval construction and genotype filtering; individual line-level authorship is not established. Current maintenance changes are documented separately. [Source and changes](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/PROVENANCE.md).
+- **Data:** entirely synthetic FASTA/VCF examples; a simplified recognition-start model, not a physical digestion or sequencing-yield simulator.
+- **Context:** BIOL 6505 · Fall 2025 · team project
+- **Stack:** Python · Biopython
+
 ### [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler)
 Summarize variable columns in aligned protein sequences and export per-column counts, fractions and a ranked plot.
 
