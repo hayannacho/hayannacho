@@ -86,6 +86,23 @@ Trim paired reads with fastp, then run SPAdes assembly and SeqKit statistics as 
 
 These checks demonstrate execution, not biological accuracy or genome-assembly quality. The underlying bioinformatics tools are external software; the contribution described here is their workflow integration.
 
+## More computational projects
+
+Runnable coursework implementations with synthetic examples. Checks below describe local execution and algorithm behavior; tiny training fixtures are not benchmark accuracy results.
+
+| Project | Function | Verified result |
+|---|---|---|
+| [Six-frame DNA translation](https://github.com/hayannacho/six-frame-dna-translator) | Standard-code translation on both strands | 64 codons and six-frame fixtures; 3 tests |
+| [Affine-gap global alignment](https://github.com/hayannacho/affine-global-alignment) | Three-state dynamic programming and traceback | 225 short pairs vs exhaustive oracle; 2 tests |
+| [Hidden-state inference](https://github.com/hayannacho/hmm-state-inference) | Scaled forward–backward posterior probabilities | Hidden-state enumeration and normalization; 2 tests |
+| [Matrix factorization](https://github.com/hayannacho/matrix-factorization-recommender) | Biased low-rank SGD for missing ratings | Synthetic training RMSE 1.69967 → 1.55173; 2 tests |
+| [Bacterial competition](https://github.com/hayannacho/bacterial-competition-simulator) | Seeded killing/reproduction on a lattice | Population and event accounting; 3 tests |
+| [Climate finance demo](https://github.com/hayannacho/climate-finance-demo) | Country joins, coal shares, CSV and scatter plot | 6 fictional countries; 3 tests |
+| [Graph learning baselines](https://github.com/hayannacho/graph-learning-baselines) | MLP/GCN node and pooled graph classification | CPU training and permutation equivariance; 3 tests |
+| [Primer design](https://github.com/hayannacho/primer-design-demo) | Primer3 pairs around a genomic position | Binding coordinates and 600–800 bp products; 3 tests |
+| [K-means / K-medoids](https://github.com/hayannacho/kmeans-kmedoids-comparison) | Mean and medoid clustering with outliers | Known clusters and duplicate-point behavior; 3 tests |
+| [Protein attention classifier](https://github.com/hayannacho/protein-attention-classifier) | Amino-acid self-attention and masked pooling | Padding invariance and CPU backpropagation; 3 tests |
+
 ## Working approach
 
 I document inputs, execution steps, tested environments and interpretation limits. Each featured repository documents implementation and tested execution steps. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
