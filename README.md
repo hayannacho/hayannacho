@@ -31,6 +31,15 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Bioinformatics workflows
 
+### [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler)
+Summarize variable columns in aligned protein sequences and export per-column counts, fractions and a ranked plot.
+
+- **Verified:** seven tests passed, including agreement with the archived script on the synthetic example; a Linux Python 3.12 smoke run also generated CSV and PNG. [Validation](https://github.com/hayannacho/alignment-variability-profiler/blob/main/docs/VALIDATION.md).
+- **Scope:** aligned-FASTA parsing, per-column residue counting, ranking and plotting, based on the named coursework script; current CLI, validation and output additions are documented separately. [Source and changes](https://github.com/hayannacho/alignment-variability-profiler/blob/main/docs/PROVENANCE.md).
+- **Data:** synthetic example only—four artificial sequences, ten alignment columns, three variable columns. Counts describe observed sequence variation, not evolutionary mutation events.
+- **Context:** BIOL 7200 · Fall 2024
+- **Stack:** Python · Biopython · Matplotlib
+
 ### [Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis)
 Search exact nucleotide matches and protein-to-genome candidates, extract repeat-flanked spacer candidates, and map alignments to annotated genes.
 
