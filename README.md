@@ -16,7 +16,7 @@ Explore how grooming strategies and alliance dynamics shape simulated dominance 
 ### [PostureAware](https://github.com/hayannacho/posture-aware-study)
 A local webcam application for immediate versus adaptive posture feedback.
 
-- **Focus:** project leadership and AI-assisted development in collaboration with Amey Agarwal.
+- **Focus:** webcam calibration, posture monitoring and adaptive feedback; application code developed with AI assistance.
 - **Explore:** personal calibration, posture monitoring, feedback and session summaries. Four hardware-free checks passed; live camera/audio behavior requires separate verification.
 - **Stack:** Python · MediaPipe · Flask · Socket.IO
 - **Data:** original participant data excluded.
@@ -24,7 +24,7 @@ A local webcam application for immediate versus adaptive posture feedback.
 ### [Missing-data Sensitivity Analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis)
 Compare complete-case regression, multiple imputation and measurement-handling scenarios.
 
-- **Focus:** a portfolio adaptation of my R course analysis, with documented AI-assisted preparation.
+- **Focus:** missingness analysis, pooled regression and measurement-handling sensitivity checks.
 - **See it run:** generated data, pooled estimates and a validated HTML report; both scenarios complete 20 imputations × 10 iterations.
 - **Stack:** R · mice · R Markdown · Python
 - **Data:** synthetic demonstration only; no real ADNI data or clinical findings.
@@ -37,4 +37,4 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Working approach
 
-I document inputs, execution steps, tested environments and interpretation limits. Each featured repository identifies contribution scope, source provenance, and AI assistance where applicable. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
+I document inputs, execution steps, tested environments and interpretation limits. Each featured repository identifies contribution scope, source provenance, and tested execution steps. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
