@@ -103,6 +103,14 @@ Runnable coursework implementations with synthetic examples. Checks below descri
 | [K-means / K-medoids](https://github.com/hayannacho/kmeans-kmedoids-comparison) | Mean and medoid clustering with outliers | Known clusters and duplicate-point behavior; 3 tests |
 | [Protein attention classifier](https://github.com/hayannacho/protein-attention-classifier) | Amino-acid self-attention and masked pooling | Padding invariance and CPU backpropagation; 3 tests |
 
+### [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab)
+Run six local sight/hearing tasks with generated visual and audio stimuli, adaptive 3-AFC trials and threshold plots.
+
+- **Verified:** seven automated tests passed, covering all six pages, adaptive response recording, staircase reversals, WAV frequency and amplitude, gap timing and screen calculations.
+- **Context:** individual Human–Systems Integration coursework, Summer 2026, Assignment 2.
+- **Data:** synthetic signals and scripted test responses; personal measurements and the original report are excluded. Hardware calibration and human thresholds were not validated by these software checks.
+- **Stack:** Python · Streamlit · NumPy · Matplotlib · Pillow
+
 ## Working approach
 
 I document inputs, execution steps, tested environments and interpretation limits. Each featured repository documents implementation and tested execution steps. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
