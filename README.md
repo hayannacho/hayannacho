@@ -31,6 +31,14 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Statistical learning
 
+### [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis)
+Compare full-information maximum-likelihood regression with and without saturated-correlate auxiliary variables; export robust intervals, joint Wald tests, missingness patterns, and coefficient plots.
+
+- **Verified:** two real FIML fits converged on 800 synthetic rows; complete-case OLS used 321. Eight checks passed, including independent OLS and covariance-based Wald comparisons. [Results and validation](https://github.com/hayannacho/fiml-auxiliary-variable-analysis/blob/main/docs/VALIDATION.md).
+- **Data:** generated continuous observations only; one reproducible example, not a clinical result or a repeated-sampling performance benchmark.
+- **Context:** individual PSYC 8803 coursework, Fall 2025; FIML model specification, auxiliary-variable comparison, and statistical interpretation.
+- **Stack:** R · lavaan · semTools · Docker
+
 ### [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows)
 Compare slope priors, fit random-intercept/random-slope growth curves, and estimate binary-outcome probabilities with brms and Stan.
 
