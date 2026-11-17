@@ -41,6 +41,14 @@ Fit a full-covariance Gaussian mixture in NumPy and export assignments and likel
 
 ## Bioinformatics workflows
 
+### [ESM2 variant prediction](https://github.com/hayannacho/esm2-variant-prediction)
+Score single amino-acid substitutions with frozen ESM2 embeddings and a neural regression head; export validation metrics and candidate rankings.
+
+- **Verified:** real ESM2 8M CPU inference for 80 synthetic variants, five training epochs, a 48/12 position-held-out split, 20 candidate predictions, and 12 passing tests. [Results](https://github.com/hayannacho/esm2-variant-prediction/blob/main/docs/VALIDATION.md).
+- **Result limits:** synthetic validation MSE 0.232305 and Spearman −0.293706; an execution demo, not evidence of useful biological ranking.
+- **Context:** CX 4803 · Spring 2025 · team project; frozen protein embeddings, regression, validation, and ranking.
+- **Stack:** Python · PyTorch · fair-esm · NumPy · SciPy
+
 ### [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter)
 Compute optimal local DNA-alignment scores and count coordinate-distinct traceback paths; export total and endpoint counts as JSON.
 
