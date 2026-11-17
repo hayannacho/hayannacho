@@ -31,6 +31,14 @@ Compare complete-case regression, multiple imputation and measurement-handling s
 
 ## Statistical learning
 
+### [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows)
+Compare slope priors, fit random-intercept/random-slope growth curves, and estimate binary-outcome probabilities with brms and Stan.
+
+- **Verified:** five real MCMC fits, four chains each, and 10 passing checks; maximum R-hat 1.0042 and zero divergences. [Results and plots](https://github.com/hayannacho/bayesian-regression-workflows).
+- **Synthetic result:** population time slope −0.355 for a generating value of −0.35; fictional observations only, with no clinical or original-course-data results.
+- **Context:** individual PSYC 8803 coursework, Fall 2025; model specification, prior comparison, and posterior interpretation.
+- **Stack:** R · brms · Stan · Docker
+
 ### [Gaussian mixture clustering with EM](https://github.com/hayannacho/gmm-em-clustering)
 Fit a full-covariance Gaussian mixture in NumPy and export assignments and likelihood traces.
 
