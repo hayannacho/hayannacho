@@ -1,140 +1,95 @@
 # Hayoung Anna Cho
 
-**Bioinformatics at Georgia Tech · Python, R and reproducible research workflows**
+**Bioinformatics at Georgia Tech · Computational biology, simulation, and statistical analysis**
 
-I work on computational biology, simulation and data analysis. My projects connect biological questions with configurable models, statistical workflows and usable research software.
+I build research workflows that turn biological questions into configurable models, reproducible analyses, and usable software. My projects span Python and R, sequence analysis, simulation, and interactive research applications.
 
-## Selected projects
+[Selected work](#selected-work) · [Statistical analysis](#statistical-analysis) · [Bioinformatics](#bioinformatics) · [More implementations](#more-implementations)
 
-### [Macaque Social Dynamics](https://github.com/hayannacho/macaque-social-dynamics)
-Explore how grooming strategies and alliance dynamics shape simulated dominance hierarchies.
+## Selected work
 
-- **Focus:** configuration, grooming matrices and biological initialization within a six-person team project.
-- **See it run:** three-strategy demo, matrix visualization and a locally verified 281-test suite.
-- **Stack:** Python · NumPy · SciPy · simulation
+### 01 · [Macaque Social Dynamics](https://github.com/hayannacho/macaque-social-dynamics)
+**From biological assumptions to a runnable social-dynamics model.**
 
-### [PostureAware](https://github.com/hayannacho/posture-aware-study)
-A team course project implementing a local webcam application for immediate versus adaptive posture feedback.
+Compare three grooming strategies and inspect the resulting power trajectories. My focus was configuration, grooming matrices, and biological initialization within a six-person team project.
 
-- **Focus:** webcam calibration, posture monitoring and adaptive feedback; application code developed with AI assistance.
-- **Explore:** personal calibration, posture monitoring, feedback and session summaries. Four hardware-free checks passed; live camera/audio behavior requires separate verification.
-- **Stack:** Python · MediaPipe · Flask · Socket.IO
-- **Data:** original participant data excluded.
+[![Three seeded macaque simulation outputs](https://raw.githubusercontent.com/hayannacho/macaque-social-dynamics/main/docs/assets/strategy-results.png)](https://github.com/hayannacho/macaque-social-dynamics)
 
-### [Missing-data Sensitivity Analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis)
-Compare complete-case regression, multiple imputation and measurement-handling scenarios.
+**Verified:** three 30-agent runs; 1,800 exported state values; 281 tests passed. Exploratory simulation, with model assumptions and limits documented. **Stack:** Python · NumPy · Matplotlib.
 
-- **Focus:** missingness analysis, pooled regression and measurement-handling sensitivity checks.
-- **See it run:** generated data, pooled estimates and a validated HTML report; both scenarios complete 20 imputations × 10 iterations.
-- **Stack:** R · mice · R Markdown · Python
-- **Data:** synthetic demonstration only; no real ADNI data or clinical findings.
+[Explore the model](https://github.com/hayannacho/macaque-social-dynamics) · [Contribution scope](https://github.com/hayannacho/macaque-social-dynamics/blob/main/docs/CONTRIBUTIONS.md) · [Validation](https://github.com/hayannacho/macaque-social-dynamics/blob/main/docs/VALIDATION.md)
 
-## Statistical learning
+### 02 · [PostureAware](https://github.com/hayannacho/posture-aware-study)
+**Personal calibration and adaptive feedback in a local webcam app.**
 
-### [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis)
-Compare full-information maximum-likelihood regression with and without saturated-correlate auxiliary variables; export robust intervals, joint Wald tests, missingness patterns, and coefficient plots.
+A team course project connecting MediaPipe pose estimation, baseline calibration, visual/audio feedback, and session summaries. The preview below runs the actual feedback logic with scripted inputs.
 
-- **Verified:** two real FIML fits converged on 800 synthetic rows; complete-case OLS used 321. Eight checks passed, including independent OLS and covariance-based Wald comparisons. [Results and validation](https://github.com/hayannacho/fiml-auxiliary-variable-analysis/blob/main/docs/VALIDATION.md).
-- **Data:** generated continuous observations only; one reproducible example, not a clinical result or a repeated-sampling performance benchmark.
-- **Context:** individual PSYC 8803 coursework, Fall 2025; FIML model specification, auxiliary-variable comparison, and statistical interpretation.
-- **Stack:** R · lavaan · semTools · Docker
+[![Immediate and adaptive alert timing on synthetic inputs](https://raw.githubusercontent.com/hayannacho/posture-aware-study/main/docs/assets/feedback-timing.png)](https://github.com/hayannacho/posture-aware-study)
 
-### [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows)
-Compare slope priors, fit random-intercept/random-slope growth curves, and estimate binary-outcome probabilities with brms and Stan.
+**Verified:** four hardware-free tests plus a synthetic timing demo; first alerts occur after 1s versus 5s of scripted poor posture. Participant data are excluded; camera/audio performance and intervention efficacy are not established by these checks. **Stack:** Python · MediaPipe · Flask · Socket.IO.
 
-- **Verified:** five real MCMC fits, four chains each, and 10 passing checks; maximum R-hat 1.0042 and zero divergences. [Results and plots](https://github.com/hayannacho/bayesian-regression-workflows).
-- **Synthetic result:** population time slope −0.355 for a generating value of −0.35; fictional observations only, with no clinical or original-course-data results.
-- **Context:** individual PSYC 8803 coursework, Fall 2025; model specification, prior comparison, and posterior interpretation.
-- **Stack:** R · brms · Stan · Docker
+[Explore the app](https://github.com/hayannacho/posture-aware-study) · [Validation](https://github.com/hayannacho/posture-aware-study/blob/main/docs/VALIDATION.md) · [Application-code AI disclosure](https://github.com/hayannacho/posture-aware-study/blob/main/AI_USAGE.md)
 
-### [Gaussian mixture clustering with EM](https://github.com/hayannacho/gmm-em-clustering)
-Fit a full-covariance Gaussian mixture in NumPy and export assignments and likelihood traces.
+### 03 · [Missing-data Sensitivity Analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis)
+**Make the consequences of missing-data decisions visible.**
 
-- **Verified:** seven independent tests and seven course tests passed; a 600-point synthetic demo converged in 11 iterations.
-- **Implementation:** individual CSE 6740 coursework implementing initialization, covariance estimation, Gaussian density, E/M updates and model training.
-- **Data:** synthetic observations only.
-- **Stack:** Python · NumPy
+Individual coursework comparing complete-case regression, multiple imputation, and alternative handling of zero-valued measurements. The public workflow uses generated observations only.
 
-## Bioinformatics workflows
+[![Synthetic regression estimates and analysis populations](https://raw.githubusercontent.com/hayannacho/missing-data-sensitivity-analysis/main/docs/assets/sensitivity-results.png)](https://github.com/hayannacho/missing-data-sensitivity-analysis)
 
-### [ESM2 variant prediction](https://github.com/hayannacho/esm2-variant-prediction)
-Score single amino-acid substitutions with frozen ESM2 embeddings and a neural regression head; export validation metrics and candidate rankings.
+**Verified:** 400 synthetic rows, 69 screened features, and two scenarios with 20 imputations × 10 iterations each; Python checks and the complete R/HTML pipeline passed. **Stack:** R · mice · R Markdown · Python.
 
-- **Verified:** real ESM2 8M CPU inference for 80 synthetic variants, five training epochs, a 48/12 position-held-out split, 20 candidate predictions, and 12 passing tests. [Results](https://github.com/hayannacho/esm2-variant-prediction/blob/main/docs/VALIDATION.md).
-- **Result limits:** synthetic validation MSE 0.232305 and Spearman −0.293706; an execution demo, not evidence of useful biological ranking.
-- **Context:** CX 4803 · Spring 2025 · team project; frozen protein embeddings, regression, validation, and ranking.
-- **Stack:** Python · PyTorch · fair-esm · NumPy · SciPy
+[Explore the analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis) · [Exact plotted results](https://github.com/hayannacho/missing-data-sensitivity-analysis/blob/main/docs/demo/coefficient-comparison.csv) · [Validation](https://github.com/hayannacho/missing-data-sensitivity-analysis/blob/main/docs/VALIDATION.md)
 
-### [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter)
-Compute optimal local DNA-alignment scores and count coordinate-distinct traceback paths; export total and endpoint counts as JSON.
+## Statistical analysis
 
-- **Verified:** seven tests passed, including 1,922 score/count comparisons against independent exhaustive enumeration. Archive-compatible mode also matched the original function on 961 short sequence pairs. [Validation](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/VALIDATION.md).
-- **Scope:** individual coursework implementing score/count dynamic programming and tied-path aggregation. Scoring correction, CLI and tests are documented as current maintenance. [Source and changes](https://github.com/hayannacho/local-alignment-path-counter/blob/main/docs/PROVENANCE.md).
-- **Data:** synthetic toy sequences only; short-sequence algorithm demonstration, not a biological significance test.
-- **Context:** CSE 6301 · Fall 2025 · Homework 1
-- **Stack:** Python standard library
+| Project | What it does | Verified execution |
+|---|---|---|
+| [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis) | Compare FIML regression with and without auxiliary variables; export robust intervals and Wald tests | Two fits converged on 800 synthetic rows; 8 checks |
+| [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows) | Compare priors, fit growth curves, and estimate binary-outcome probabilities with brms/Stan | Five MCMC fits, four chains each; max R-hat 1.0042, zero divergences; 10 checks |
+| [Gaussian mixture clustering](https://github.com/hayannacho/gmm-em-clustering) | Implement full-covariance Gaussian mixtures and EM in NumPy | 600-point synthetic demo converged in 11 iterations; 14 tests |
 
-### [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo)
-Compare educational Single RAD, ddRAD and 2bRAD coverage windows with two-sample variant positions; export BED, TSV and JSON results.
+## Bioinformatics
 
-- **Verified:** eight tests passed across all three modes, coordinate boundaries, overlapping intervals and repeatability. The synthetic example produces 3 / 8 / 1 windows and covers 3 / 4 / 1 variant records respectively. [Validation](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/VALIDATION.md).
-- **Scope:** team coursework covering motif matching, interval construction and genotype filtering. Current maintenance changes are documented separately. [Source and changes](https://github.com/hayannacho/rad-seq-coverage-demo/blob/main/docs/PROVENANCE.md).
-- **Data:** entirely synthetic FASTA/VCF examples; a simplified recognition-start model, not a physical digestion or sequencing-yield simulator.
-- **Context:** BIOL 6505 · Fall 2025 · team project
-- **Stack:** Python · Biopython
+| Project | What it does | Verified execution |
+|---|---|---|
+| [ESM2 variant prediction](https://github.com/hayannacho/esm2-variant-prediction) | Frozen protein embeddings, neural regression, and candidate ranking | Real ESM2 8M inference on 80 synthetic variants; 12 tests |
+| [Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis) | Exact matches, protein-to-genome candidates, spacer extraction, and annotation mapping | Five integration tests using real BLAST+ and seqtk |
+| [Nextflow paired-end workflow](https://github.com/hayannacho/my_first_wf) | fastp trimming with parallel SPAdes assembly and SeqKit statistics | All three stages ran on archived and synthetic inputs, including paths with spaces |
+| [Amplicon workflow](https://github.com/hayannacho/amplicon-workflow) | Extract and orient amplicons from assemblies or mapped paired reads | Four tests with real BLAST/minimap2/samtools; 192-base synthetic output |
+| [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter) | Compute optimal local scores and count tied traceback paths | 1,922 exhaustive-oracle comparisons; 7 tests |
+| [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo) | Compare recognition-window coverage across three RAD modes | Eight tests; synthetic FASTA/VCF examples |
+| [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler) | Rank variable aligned-protein columns; export counts and a plot | Seven tests and a Linux smoke run |
+| [Find homologs](https://github.com/hayannacho/find_homologs) | Protein-to-genome candidate search with translated BLAST and strict identity/coverage filters | Real tblastn runs: one synthetic match and a no-hit control |
+| [Perfect hits](https://github.com/hayannacho/perfect_hits) | Filter blastn alignments for 100% identity and full query length | One retained 160-base synthetic alignment |
 
-### [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler)
-Summarize variable columns in aligned protein sequences and export per-column counts, fractions and a ranked plot.
+ESM2's tiny synthetic run validates execution: validation MSE was 0.232305 and Spearman correlation −0.293706, not evidence of useful biological ranking. Sequence-workflow checks likewise establish software behavior rather than biological accuracy or assembly quality. Each repository describes coursework context and implementation scope.
 
-- **Verified:** seven tests passed, including agreement with the archived script on the synthetic example; a Linux Python 3.12 smoke run also generated CSV and PNG. [Validation](https://github.com/hayannacho/alignment-variability-profiler/blob/main/docs/VALIDATION.md).
-- **Scope:** aligned-FASTA parsing, per-column residue counting, ranking and plotting, based on the named coursework script; current CLI, validation and output additions are documented separately. [Source and changes](https://github.com/hayannacho/alignment-variability-profiler/blob/main/docs/PROVENANCE.md).
-- **Data:** synthetic example only—four artificial sequences, ten alignment columns, three variable columns. Counts describe observed sequence variation, not evolutionary mutation events.
-- **Context:** BIOL 7200 · Fall 2024
-- **Stack:** Python · Biopython · Matplotlib
+## More implementations
 
-### [Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis)
-Search exact nucleotide matches and protein-to-genome candidates, extract repeat-flanked spacer candidates, and map alignments to annotated genes.
-
-- **Verified:** five synthetic integration tests passed with real BLAST+ and seqtk, covering reverse-strand/BED boundaries, spacer extraction, paths with spaces, and failure handling. [Validation](https://github.com/hayannacho/genome_sequence_analysis/blob/main/docs/VALIDATION.md).
-- **Scope:** Bash workflow integration, sequence filtering and coordinate handling, with archived coursework separated from current corrections. [Source and changes](https://github.com/hayannacho/genome_sequence_analysis/blob/main/docs/PROVENANCE.md).
-- **Context:** BIOL 7200 · Fall 2024
-- **Stack:** Bash · BLAST+ · seqtk · Docker
-
-### [Paired-end processing with Nextflow](https://github.com/hayannacho/my_first_wf)
-Trim paired reads with fastp, then run SPAdes assembly and SeqKit statistics as parallel downstream branches.
-
-- **Verified:** all three stages completed on the archived read subset, synthetic inputs, and inputs with spaces in their filenames; output checks confirmed paired FASTQ, statistics and nonempty assemblies. [Validation](https://github.com/hayannacho/my_first_wf/blob/main/docs/VALIDATION.md).
-- **Scope:** composing the three-tool workflow and configuring inputs, execution and outputs; archived coursework and current maintenance changes are documented separately. [Source and changes](https://github.com/hayannacho/my_first_wf/blob/main/docs/PROVENANCE.md).
-- **Context:** BIOL 7210 · Spring 2025
-- **Stack:** Nextflow DSL2 · fastp · SPAdes · SeqKit · Docker
-
-These checks demonstrate execution, not biological accuracy or genome-assembly quality. The underlying bioinformatics tools are external software; the contribution described here is their workflow integration.
-
-## More computational projects
-
-Runnable coursework implementations with synthetic examples. Checks below describe local execution and algorithm behavior; tiny training fixtures are not benchmark accuracy results.
+<details>
+<summary><strong>Algorithms, simulations, and research interfaces</strong></summary>
 
 | Project | Function | Verified result |
 |---|---|---|
 | [Six-frame DNA translation](https://github.com/hayannacho/six-frame-dna-translator) | Standard-code translation on both strands | 64 codons and six-frame fixtures; 3 tests |
 | [Affine-gap global alignment](https://github.com/hayannacho/affine-global-alignment) | Three-state dynamic programming and traceback | 225 short pairs vs exhaustive oracle; 2 tests |
-| [Hidden-state inference](https://github.com/hayannacho/hmm-state-inference) | Scaled forward–backward posterior probabilities | Hidden-state enumeration and normalization; 2 tests |
-| [Matrix factorization](https://github.com/hayannacho/matrix-factorization-recommender) | Biased low-rank SGD for missing ratings | Synthetic training RMSE 1.69967 → 1.55173; 2 tests |
-| [Bacterial competition](https://github.com/hayannacho/bacterial-competition-simulator) | Seeded killing/reproduction on a lattice | Population and event accounting; 3 tests |
-| [Climate finance demo](https://github.com/hayannacho/climate-finance-demo) | Country joins, coal shares, CSV and scatter plot | 6 fictional countries; 3 tests |
-| [Graph learning baselines](https://github.com/hayannacho/graph-learning-baselines) | MLP/GCN node and pooled graph classification | CPU training and permutation equivariance; 3 tests |
+| [Hidden-state inference](https://github.com/hayannacho/hmm-state-inference) | Scaled forward–backward probabilities | Hidden-state enumeration and normalization; 2 tests |
+| [Matrix factorization](https://github.com/hayannacho/matrix-factorization-recommender) | Biased SGD for missing ratings | Synthetic training RMSE 1.69967 → 1.55173; 2 tests |
+| [Bacterial competition](https://github.com/hayannacho/bacterial-competition-simulator) | Lattice killing/reproduction simulation | Population and event accounting; 3 tests |
+| [Climate finance demo](https://github.com/hayannacho/climate-finance-demo) | Country joins and emissions/finance plots | Six fictional countries; 3 tests |
+| [Graph learning baselines](https://github.com/hayannacho/graph-learning-baselines) | MLP/GCN node and graph classification | CPU training and permutation equivariance; 3 tests |
 | [Primer design](https://github.com/hayannacho/primer-design-demo) | Primer3 pairs around a genomic position | Binding coordinates and 600–800 bp products; 3 tests |
 | [K-means / K-medoids](https://github.com/hayannacho/kmeans-kmedoids-comparison) | Mean and medoid clustering with outliers | Known clusters and duplicate-point behavior; 3 tests |
-| [Protein attention classifier](https://github.com/hayannacho/protein-attention-classifier) | Amino-acid self-attention and masked pooling | Padding invariance and CPU backpropagation; 3 tests |
+| [Protein attention classifier](https://github.com/hayannacho/protein-attention-classifier) | Self-attention and masked amino-acid pooling | Padding invariance and CPU backpropagation; 3 tests |
+| [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab) | Six sight/hearing tasks with adaptive trials and threshold plots | Seven software tests; generated signals and scripted responses |
 
-### [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab)
-Run six local sight/hearing tasks with generated visual and audio stimuli, adaptive 3-AFC trials and threshold plots.
+Personal measurements and reports are excluded from Perceptual Sense Lab. Software checks do not calibrate human perception or hardware. Small training fixtures in these repositories are execution examples, not benchmark claims.
 
-- **Verified:** seven automated tests passed, covering all six pages, adaptive response recording, staircase reversals, WAV frequency and amplitude, gap timing and screen calculations.
-- **Context:** individual Human–Systems Integration coursework, Summer 2026, Assignment 2.
-- **Data:** synthetic signals and scripted test responses; personal measurements and the original report are excluded. Hardware calibration and human thresholds were not validated by these software checks.
-- **Stack:** Python · Streamlit · NumPy · Matplotlib · Pillow
+</details>
 
-## Working approach
+## How I work
 
-I document inputs, execution steps, tested environments and interpretation limits. Each featured repository documents implementation and tested execution steps. Synthetic examples are labelled explicitly, and original participant records are excluded from the public study repositories.
+**Explicit assumptions. Reproducible runs. Results you can inspect.**
+
+I document inputs, commands, tested environments, and interpretation limits alongside the code. Synthetic examples are labeled, original participant records stay out of public repositories, and team projects identify the relevant implementation scope.
