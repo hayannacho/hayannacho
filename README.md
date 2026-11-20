@@ -47,7 +47,7 @@ Individual coursework comparing complete-case regression, multiple imputation, a
 |---|---|---|
 | [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis) | Compare FIML regression with and without auxiliary variables; export robust intervals and Wald tests | Two fits converged on 800 synthetic rows; 8 checks |
 | [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows) | Compare priors, fit growth curves, and estimate binary-outcome probabilities with brms/Stan | Five MCMC fits, four chains each; max R-hat 1.0042, zero divergences; 10 checks |
-| [Gaussian mixture clustering](https://github.com/hayannacho/gmm-em-clustering) | Implement full-covariance Gaussian mixtures and EM in NumPy | 600-point synthetic demo converged in 11 iterations; 14 tests |
+| [Gaussian mixture clustering](https://github.com/hayannacho/gmm-em-clustering) | Implement full-covariance Gaussian mixtures and EM in NumPy | 600-point synthetic demo converged in 11 iterations; 7 tests |
 
 ## Bioinformatics
 
@@ -60,8 +60,6 @@ Individual coursework comparing complete-case regression, multiple imputation, a
 | [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter) | Compute optimal local scores and count tied traceback paths | 1,922 exhaustive-oracle comparisons; 7 tests |
 | [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo) | Compare recognition-window coverage across three RAD modes | Eight tests; synthetic FASTA/VCF examples |
 | [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler) | Rank variable aligned-protein columns; export counts and a plot | Seven tests and a Linux smoke run |
-| [Find homologs](https://github.com/hayannacho/find_homologs) | Protein-to-genome candidate search with translated BLAST and strict identity/coverage filters | Real tblastn runs: one synthetic match and a no-hit control |
-| [Perfect hits](https://github.com/hayannacho/perfect_hits) | Filter blastn alignments for 100% identity and full query length | One retained 160-base synthetic alignment |
 
 ESM2's tiny synthetic run validates execution: validation MSE was 0.232305 and Spearman correlation −0.293706, not evidence of useful biological ranking. Sequence-workflow checks likewise establish software behavior rather than biological accuracy or assembly quality. Each repository describes coursework context and implementation scope.
 
@@ -72,16 +70,7 @@ ESM2's tiny synthetic run validates execution: validation MSE was 0.232305 and S
 
 | Project | Function | Verified result |
 |---|---|---|
-| [Six-frame DNA translation](https://github.com/hayannacho/six-frame-dna-translator) | Standard-code translation on both strands | 64 codons and six-frame fixtures; 3 tests |
-| [Affine-gap global alignment](https://github.com/hayannacho/affine-global-alignment) | Three-state dynamic programming and traceback | 225 short pairs vs exhaustive oracle; 2 tests |
-| [Hidden-state inference](https://github.com/hayannacho/hmm-state-inference) | Scaled forward–backward probabilities | Hidden-state enumeration and normalization; 2 tests |
-| [Matrix factorization](https://github.com/hayannacho/matrix-factorization-recommender) | Biased SGD for missing ratings | Synthetic training RMSE 1.69967 → 1.55173; 2 tests |
-| [Bacterial competition](https://github.com/hayannacho/bacterial-competition-simulator) | Lattice killing/reproduction simulation | Population and event accounting; 3 tests |
-| [Climate finance demo](https://github.com/hayannacho/climate-finance-demo) | Country joins and emissions/finance plots | Six fictional countries; 3 tests |
-| [Graph learning baselines](https://github.com/hayannacho/graph-learning-baselines) | MLP/GCN node and graph classification | CPU training and permutation equivariance; 3 tests |
-| [Primer design](https://github.com/hayannacho/primer-design-demo) | Primer3 pairs around a genomic position | Binding coordinates and 600–800 bp products; 3 tests |
-| [K-means / K-medoids](https://github.com/hayannacho/kmeans-kmedoids-comparison) | Mean and medoid clustering with outliers | Known clusters and duplicate-point behavior; 3 tests |
-| [Protein attention classifier](https://github.com/hayannacho/protein-attention-classifier) | Self-attention and masked amino-acid pooling | Padding invariance and CPU backpropagation; 3 tests |
+| [Coursework algorithms](https://github.com/hayannacho/coursework-algorithms) | Ten small implementations in one repository: affine-gap alignment, six-frame translation, primer design, attention and graph classifiers, HMM smoothing, K-means / K-medoids, matrix factorization, lattice competition, emissions joins | 27 tests on Python 3.11 |
 | [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab) | Six sight/hearing tasks with adaptive trials and threshold plots | Seven software tests; generated signals and scripted responses |
 
 Personal measurements and reports are excluded from Perceptual Sense Lab. Software checks do not calibrate human perception or hardware. Small training fixtures in these repositories are execution examples, not benchmark claims.
