@@ -56,9 +56,6 @@ The negative rank correlation on arbitrary synthetic labels verifies the workflo
 | [Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis) | Exact matches, protein-to-genome candidates, spacer extraction, and annotation mapping | Five integration tests using real BLAST+ and seqtk |
 | [Nextflow paired-end workflow](https://github.com/hayannacho/my_first_wf) | fastp trimming with parallel SPAdes assembly and SeqKit statistics | All three stages ran on archived and synthetic inputs, including paths with spaces |
 | [Amplicon workflow](https://github.com/hayannacho/amplicon-workflow) | Extract and orient amplicons from assemblies or mapped paired reads | Four tests with real BLAST/minimap2/samtools; 192-base synthetic output |
-| [Local alignment path counter](https://github.com/hayannacho/local-alignment-path-counter) | Compute optimal local scores and count tied traceback paths | 1,922 exhaustive-oracle comparisons; 7 tests |
-| [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo) | Compare recognition-window coverage across three RAD modes | Eight tests; synthetic FASTA/VCF examples |
-| [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler) | Rank variable aligned-protein columns; export counts and a plot | Seven tests and a Linux smoke run |
 
 These checks establish software behavior rather than biological accuracy or assembly quality. Each repository describes its coursework context and implementation scope.
 
@@ -69,7 +66,6 @@ These checks establish software behavior rather than biological accuracy or asse
 | [Missing-data sensitivity analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis) | Compare complete-case regression, multiple imputation, and alternative handling of zero-valued measurements | 400 synthetic rows, 69 screened features, two scenarios of 20 imputations × 10 iterations |
 | [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis) | Compare FIML regression with and without auxiliary variables; export robust intervals and Wald tests | Two fits converged on 800 synthetic rows; 8 checks |
 | [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows) | Compare priors, fit growth curves, and estimate binary-outcome probabilities with brms/Stan | Five MCMC fits, four chains each; max R-hat 1.0042, zero divergences; 10 checks |
-| [Gaussian mixture clustering](https://github.com/hayannacho/gmm-em-clustering) | Implement full-covariance Gaussian mixtures and EM in NumPy | 600-point synthetic demo converged in 11 iterations; 7 tests |
 
 The public missing-data workflow uses generated observations only; no original participant records or clinical results are included.
 
@@ -80,7 +76,7 @@ The public missing-data workflow uses generated observations only; no original p
 | [Macaque social dynamics](https://github.com/hayannacho/macaque-social-dynamics) | Agent-based model of grooming, alliances, and rank change; I led configuration, grooming matrices, and biological initialization in a six-person team | Three 30-agent runs, 1,800 exported state values; 281 team tests pass |
 | [PostureAware](https://github.com/hayannacho/posture-aware-study) | Webcam posture feedback with personal calibration and adaptive alert timing, from a team study | Four hardware-free tests plus a synthetic timing demo |
 | [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab) | Six sight and hearing tasks with generated stimuli and adaptive staircases | Seven software and signal tests; no participant data |
-| [Coursework algorithms](https://github.com/hayannacho/coursework-algorithms) | Ten implementations in one repository: affine-gap alignment, six-frame translation, primer design, attention and graph classifiers, HMM smoothing, clustering, matrix factorization | 27 tests on Python 3.11 |
+| [Coursework algorithms](https://github.com/hayannacho/coursework-algorithms) | Thirteen implementations in one repository: affine-gap and local alignment, six-frame translation, primer design, RAD-seq coverage, attention and graph classifiers, HMM smoothing, clustering, Gaussian mixtures, matrix factorization | 49 tests on Python 3.11 |
 
 Participant records are excluded from the two study repositories. Team projects identify the relevant implementation scope.
 
