@@ -1,6 +1,6 @@
 # Hayoung Anna Cho
 
-**Bioinformatics at Georgia Tech · Computational biology, simulation, and statistical analysis**
+**MS in Bioinformatics & MS in Computational Science and Engineering at Georgia Tech**
 
 I build research workflows that turn biological questions into configurable models, reproducible analyses, and usable software. My projects span Python and R, sequence analysis, simulation, and interactive research applications.
 
