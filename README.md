@@ -2,58 +2,57 @@
 
 **MS in Bioinformatics & MS in Computational Science and Engineering at Georgia Tech**
 
-I build research workflows that turn biological questions into configurable models, reproducible analyses, and usable software. My projects span Python and R, sequence analysis, simulation, and interactive research applications.
+I work on bacterial genomics, protein and expression modeling, and the statistics that decide what those results mean. My projects run end to end: raw data to assemblies and alignments, models with held-out evaluation, and documented limits.
 
-[Selected work](#selected-work) · [Statistical analysis](#statistical-analysis) · [Bioinformatics](#bioinformatics) · [More implementations](#more-implementations)
+[Selected work](#selected-work) · [Bioinformatics](#bioinformatics) · [Statistical analysis](#statistical-analysis) · [Simulation and applications](#simulation-and-applications)
 
 ## Selected work
 
-### 01 · [Macaque Social Dynamics](https://github.com/hayannacho/macaque-social-dynamics)
-**From biological assumptions to a runnable social-dynamics model.**
+### 01 · [Outbreak genomics of 34 *N. gonorrhoeae* isolates](https://github.com/hayannacho/gonorrhoeae-outbreak-genomics)
+**Which isolates belong to the same outbreak, and how much does that answer depend on recombination?**
 
-Compare three grooming strategies and inspect the resulting power trajectories. My focus was configuration, grooming matrices, and biological initialization within a six-person team project.
+Raw Illumina reads to assemblies, a core-genome phylogeny, and SNP-distance clusters for 34 clinical isolates. I ran the Trimmomatic/SPAdes assembly arm of the course project, then rebuilt the comparative step as one containerized pipeline.
 
-[![Three seeded macaque simulation outputs](https://raw.githubusercontent.com/hayannacho/macaque-social-dynamics/main/docs/assets/strategy-results.png)](https://github.com/hayannacho/macaque-social-dynamics)
+[![Pairwise SNP distances before and after recombination filtering](https://raw.githubusercontent.com/hayannacho/gonorrhoeae-outbreak-genomics/main/results/figures/snp_distances.png)](https://github.com/hayannacho/gonorrhoeae-outbreak-genomics)
 
-**Verified:** three 30-agent runs; 1,800 exported state values; 281 tests passed. Exploratory simulation, with model assumptions and limits documented. **Stack:** Python · NumPy · Matplotlib.
+**Read the figure:** the team's 50-SNP threshold separates outbreak clusters cleanly on all core SNPs (left). After Gubbins masks recombinant regions (right), every isolate falls within 43 SNPs of every other and only one of the three clusters survives as a supported clade.
 
-[Explore the model](https://github.com/hayannacho/macaque-social-dynamics) · [Contribution scope](https://github.com/hayannacho/macaque-social-dynamics/blob/main/docs/CONTRIBUTIONS.md) · [Validation](https://github.com/hayannacho/macaque-social-dynamics/blob/main/docs/VALIDATION.md)
+**Found:** 1,170 of 1,355 SNPs (86%) sit in 74 recombination blocks, so the outbreak/sporadic split rests mostly on imported DNA rather than clonal divergence. **Stack:** ParSNP · Gubbins · IQ-TREE 2 · snp-dists · Docker.
 
-### 02 · [PostureAware](https://github.com/hayannacho/posture-aware-study)
-**Personal calibration and adaptive feedback in a local webcam app.**
+[Explore the analysis](https://github.com/hayannacho/gonorrhoeae-outbreak-genomics) · [Pipeline](https://github.com/hayannacho/gonorrhoeae-outbreak-genomics/tree/main/pipeline) · [Assembly QC for 34 isolates](https://github.com/hayannacho/gonorrhoeae-outbreak-genomics/blob/main/results/assembly_qc.tsv)
 
-A team course project connecting MediaPipe pose estimation, baseline calibration, visual/audio feedback, and session summaries. The preview below runs the actual feedback logic with scripted inputs.
+### 02 · [Prognosis prediction from breast cancer gene expression](https://github.com/hayannacho/metabric-npi-prediction)
+**Can tumor expression alone recover the Nottingham Prognostic Index risk group?**
 
-[![Immediate and adaptive alert timing on synthetic inputs](https://raw.githubusercontent.com/hayannacho/posture-aware-study/main/docs/assets/feedback-timing.png)](https://github.com/hayannacho/posture-aware-study)
+A residual network on 489 METABRIC expression features, built with a teammate for a course project and re-evaluated afterwards on a clean split.
 
-**Verified:** four hardware-free tests plus a synthetic timing demo; first alerts occur after 1s versus 5s of scripted poor posture. Participant data are excluded; camera/audio performance and intervention efficacy are not established by these checks. **Stack:** Python · MediaPipe · Flask · Socket.IO.
+[![Held-out ROC curves and confusion matrix](https://raw.githubusercontent.com/hayannacho/metabric-npi-prediction/main/results/test_performance.png)](https://github.com/hayannacho/metabric-npi-prediction)
 
-[Explore the app](https://github.com/hayannacho/posture-aware-study) · [Validation](https://github.com/hayannacho/posture-aware-study/blob/main/docs/VALIDATION.md) · [Application-code AI disclosure](https://github.com/hayannacho/posture-aware-study/blob/main/AI_USAGE.md)
+**Found:** expression carries a real but modest signal, and L2 logistic regression (71.7%, AUC 0.756) beats the residual network (68.3 ± 2.1%, AUC 0.699) on 381 held-out patients. The original notebook selected hyperparameters on the test split; this version searches on a separate validation split and scores the test set once. **Stack:** PyTorch · scikit-learn · pandas.
 
-### 03 · [Missing-data Sensitivity Analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis)
-**Make the consequences of missing-data decisions visible.**
+[Explore the model](https://github.com/hayannacho/metabric-npi-prediction) · [Metrics and search](https://github.com/hayannacho/metabric-npi-prediction/blob/main/results/metrics.json) · [Original team notebook](https://github.com/hayannacho/metabric-npi-prediction/blob/main/notebooks/ResNet.ipynb)
 
-Individual coursework comparing complete-case regression, multiple imputation, and alternative handling of zero-valued measurements. The public workflow uses generated observations only.
+### 03 · [ESM2 variant prediction](https://github.com/hayannacho/esm2-variant-prediction)
+**Frozen protein language-model embeddings, a trainable regression head, and candidate ranking.**
 
-[![Synthetic regression estimates and analysis populations](https://raw.githubusercontent.com/hayannacho/missing-data-sensitivity-analysis/main/docs/assets/sensitivity-results.png)](https://github.com/hayannacho/missing-data-sensitivity-analysis)
+A command-line workflow adapted from a team project notebook, with position-held-out splitting, batched embedding extraction, input validation, and a reproducible synthetic example.
 
-**Verified:** 400 synthetic rows, 69 screened features, and two scenarios with 20 imputations × 10 iterations each; Python checks and the complete R/HTML pipeline passed. **Stack:** R · mice · R Markdown · Python.
+| Verified CPU run | Result |
+|---|---|
+| Backbone | `esm2_t6_8M_UR50D`, frozen, 320-dimensional |
+| Labeled variants | 48 training / 12 validation, disjoint mutation positions |
+| Validation MSE | 0.232305 (training-mean baseline 0.240686) |
+| Spearman correlation | −0.293706 |
+| Automated checks | 12 tests |
 
-[Explore the analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis) · [Exact plotted results](https://github.com/hayannacho/missing-data-sensitivity-analysis/blob/main/docs/demo/coefficient-comparison.csv) · [Validation](https://github.com/hayannacho/missing-data-sensitivity-analysis/blob/main/docs/VALIDATION.md)
+The negative rank correlation on arbitrary synthetic labels verifies the workflow, not biological ranking. **Stack:** PyTorch · fair-esm · NumPy.
 
-## Statistical analysis
-
-| Project | What it does | Verified execution |
-|---|---|---|
-| [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis) | Compare FIML regression with and without auxiliary variables; export robust intervals and Wald tests | Two fits converged on 800 synthetic rows; 8 checks |
-| [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows) | Compare priors, fit growth curves, and estimate binary-outcome probabilities with brms/Stan | Five MCMC fits, four chains each; max R-hat 1.0042, zero divergences; 10 checks |
-| [Gaussian mixture clustering](https://github.com/hayannacho/gmm-em-clustering) | Implement full-covariance Gaussian mixtures and EM in NumPy | 600-point synthetic demo converged in 11 iterations; 7 tests |
+[Explore the workflow](https://github.com/hayannacho/esm2-variant-prediction) · [Validation](https://github.com/hayannacho/esm2-variant-prediction/blob/main/docs/VALIDATION.md)
 
 ## Bioinformatics
 
 | Project | What it does | Verified execution |
 |---|---|---|
-| [ESM2 variant prediction](https://github.com/hayannacho/esm2-variant-prediction) | Frozen protein embeddings, neural regression, and candidate ranking | Real ESM2 8M inference on 80 synthetic variants; 12 tests |
 | [Genome sequence analysis](https://github.com/hayannacho/genome_sequence_analysis) | Exact matches, protein-to-genome candidates, spacer extraction, and annotation mapping | Five integration tests using real BLAST+ and seqtk |
 | [Nextflow paired-end workflow](https://github.com/hayannacho/my_first_wf) | fastp trimming with parallel SPAdes assembly and SeqKit statistics | All three stages ran on archived and synthetic inputs, including paths with spaces |
 | [Amplicon workflow](https://github.com/hayannacho/amplicon-workflow) | Extract and orient amplicons from assemblies or mapped paired reads | Four tests with real BLAST/minimap2/samtools; 192-base synthetic output |
@@ -61,24 +60,32 @@ Individual coursework comparing complete-case regression, multiple imputation, a
 | [RAD-seq coverage demo](https://github.com/hayannacho/rad-seq-coverage-demo) | Compare recognition-window coverage across three RAD modes | Eight tests; synthetic FASTA/VCF examples |
 | [Alignment variability profiler](https://github.com/hayannacho/alignment-variability-profiler) | Rank variable aligned-protein columns; export counts and a plot | Seven tests and a Linux smoke run |
 
-ESM2's tiny synthetic run validates execution: validation MSE was 0.232305 and Spearman correlation −0.293706, not evidence of useful biological ranking. Sequence-workflow checks likewise establish software behavior rather than biological accuracy or assembly quality. Each repository describes coursework context and implementation scope.
+These checks establish software behavior rather than biological accuracy or assembly quality. Each repository describes its coursework context and implementation scope.
 
-## More implementations
+## Statistical analysis
 
-<details>
-<summary><strong>Algorithms, simulations, and research interfaces</strong></summary>
-
-| Project | Function | Verified result |
+| Project | What it does | Verified execution |
 |---|---|---|
-| [Coursework algorithms](https://github.com/hayannacho/coursework-algorithms) | Ten small implementations in one repository: affine-gap alignment, six-frame translation, primer design, attention and graph classifiers, HMM smoothing, K-means / K-medoids, matrix factorization, lattice competition, emissions joins | 27 tests on Python 3.11 |
-| [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab) | Six sight/hearing tasks with adaptive trials and threshold plots | Seven software tests; generated signals and scripted responses |
+| [Missing-data sensitivity analysis](https://github.com/hayannacho/missing-data-sensitivity-analysis) | Compare complete-case regression, multiple imputation, and alternative handling of zero-valued measurements | 400 synthetic rows, 69 screened features, two scenarios of 20 imputations × 10 iterations |
+| [FIML auxiliary-variable analysis](https://github.com/hayannacho/fiml-auxiliary-variable-analysis) | Compare FIML regression with and without auxiliary variables; export robust intervals and Wald tests | Two fits converged on 800 synthetic rows; 8 checks |
+| [Bayesian regression workflows](https://github.com/hayannacho/bayesian-regression-workflows) | Compare priors, fit growth curves, and estimate binary-outcome probabilities with brms/Stan | Five MCMC fits, four chains each; max R-hat 1.0042, zero divergences; 10 checks |
+| [Gaussian mixture clustering](https://github.com/hayannacho/gmm-em-clustering) | Implement full-covariance Gaussian mixtures and EM in NumPy | 600-point synthetic demo converged in 11 iterations; 7 tests |
 
-Personal measurements and reports are excluded from Perceptual Sense Lab. Software checks do not calibrate human perception or hardware. Small training fixtures in these repositories are execution examples, not benchmark claims.
+The public missing-data workflow uses generated observations only; no original participant records or clinical results are included.
 
-</details>
+## Simulation and applications
+
+| Project | What it does | Verified execution |
+|---|---|---|
+| [Macaque social dynamics](https://github.com/hayannacho/macaque-social-dynamics) | Agent-based model of grooming, alliances, and rank change; I led configuration, grooming matrices, and biological initialization in a six-person team | Three 30-agent runs, 1,800 exported state values; 281 team tests pass |
+| [PostureAware](https://github.com/hayannacho/posture-aware-study) | Webcam posture feedback with personal calibration and adaptive alert timing, from a team study | Four hardware-free tests plus a synthetic timing demo |
+| [Perceptual Sense Lab](https://github.com/hayannacho/perceptual-sense-lab) | Six sight and hearing tasks with generated stimuli and adaptive staircases | Seven software and signal tests; no participant data |
+| [Coursework algorithms](https://github.com/hayannacho/coursework-algorithms) | Ten implementations in one repository: affine-gap alignment, six-frame translation, primer design, attention and graph classifiers, HMM smoothing, clustering, matrix factorization | 27 tests on Python 3.11 |
+
+Participant records are excluded from the two study repositories. Team projects identify the relevant implementation scope.
 
 ## How I work
 
 **Explicit assumptions. Reproducible runs. Results you can inspect.**
 
-I document inputs, commands, tested environments, and interpretation limits alongside the code. Synthetic examples are labeled, original participant records stay out of public repositories, and team projects identify the relevant implementation scope.
+I document inputs, commands, tested environments, and interpretation limits alongside the code. Synthetic examples are labeled as such, original participant records stay out of public repositories, and where a result depends on an analysis choice, I say which choice and show the alternative.
